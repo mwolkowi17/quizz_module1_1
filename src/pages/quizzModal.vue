@@ -4,18 +4,34 @@
 </script>
 
 <template>
-    <div class="flex flex-col">
-        
-        <h1>
-            Quizz
+    <div class=" bg-white p-4 flex flex-col rounded-lg items-center justify-center">
+
+        <div class="w-52 h-8 rounded-lg bg-blue-100 border-blue-200 border-2 border-solid flex items-center justify-center text-center self-center">
+            <p class="text-black font-[Poppins] ">Sprawdź swoją wiedzę</p>
+        </div>
+        <h1 class="text-gray-600 text-4xl font-[Poppins] font-semibold mt-8 mb-10">
+            Jak dobrze znasz nowelę "Latarnik"?
         </h1>
-        <div class="bg-blue-500 w-215 h-28 m-2 mb-4 rounded-lg">01</div>
-        <div class="grid grid-cols-2 gap-2">
-        <button class="bg-blue-500 hover:bg-cyan-500 cursor-pointer w-104 h-16 m-2 rounded-lg">02</button>
-        <button class="bg-blue-500 hover:bg-cyan-500 cursor-pointer w-104 h-16 m-2 rounded-lg">03</button>
-        <button class="bg-blue-500 hover:bg-cyan-500 cursor-pointer w-104 h-16 m-2 rounded-lg">02</button>
-        <button class="bg-blue-500 hover:bg-cyan-500 cursor-pointer w-104 h-16 m-2 rounded-lg">03</button>
-       </div>
+        <hr class="w-200 h-px my-8 bg-gray-200 border-0 dark:bg-gray-200">
+        <div class="text-gray-600 font-[Poppins]  w-215 h-12 m-2 mb-4 text-left">
+            <p class ="text-xl font-semibold mb-2">Gdzie rozgrywa się akcja noweli „Latarnik”?</p>
+            <p class ="text-sm">Możesz wybrać tylko jedną odpowiedź.</p>
+        </div>
+        <div class="grid grid-cols-1 gap-2 text-gray-600 font-[Poppins] ">
+            <button class="bg-violet-200 hover:bg-violet-300 cursor-pointer w-215 h-16 m-1 rounded-lg border-violet-400 border-2 border-solid">
+                Buenos Aires
+            </button>
+            <button class="bg-violet-200 hover:bg-violet-300 cursor-pointer w-215 h-16 m-1 rounded-lg border-violet-400 border-2 border-solid" >
+                Aspinwall
+            </button>
+            <button class="bg-violet-200 hover:bg-violet-300 cursor-pointer w-215 h-16 m-1 rounded-lg border-violet-400 border-2 border-solid">
+                Lwów
+            </button>
+            <button class="bg-violet-200 hover:bg-violet-300 cursor-pointer w-215 h-16 m-1 rounded-lg border-violet-400 border-2 border-solid">
+                Nowy Jork
+            </button>
+        </div>
+
     </div>
 
 </template>
