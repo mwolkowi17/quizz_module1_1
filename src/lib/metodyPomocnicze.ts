@@ -14,4 +14,16 @@ export class metodyPomocnicze {
     numerPytania = Math.floor(Math.random() * n);
     return numerPytania;
   }
+
+  //metoda sprawdzająca poprawność odpowiedzi
+  static sprawdzOdpowiedz(
+    wybranaOdpowiedz: number,
+    prawidlowaOdpowiedz: number
+  ) {
+    if (wybranaOdpowiedz === prawidlowaOdpowiedz) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
