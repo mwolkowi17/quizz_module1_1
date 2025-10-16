@@ -3,14 +3,13 @@ import { onMounted, ref, nextTick } from 'vue';
 import ButtonAnswer from '../components/ButtonAnswer.vue';
 import QuestionSection from '../components/QuestionSection.vue';
 import { useQuizzStore } from '../store/quizzStore.ts'
-import { useButtonStore } from '../store/buttonStore.ts';
 import { metodyPomocnicze } from '../lib/metodyPomocnicze.ts';
 
 //https://dribbble.com/shots/24364665-slothUI-World-s-Laziest-Design-System-E-Learning-Quiz-UIUX
 //https://dribbble.com/shots/24364687-slothUI-World-s-Laziest-Design-System-E-Learning-Quiz-Dark
 
 const storeQuizz = useQuizzStore();
-const buttonStore = useButtonStore();
+
 
 //nr zestay pytań
 const nrZetawuPytanScena1 = ref(0)
@@ -44,13 +43,13 @@ onMounted(async () => {
         <QuestionSection :question="storeQuizz.pytanie" />
         <div class="grid grid-cols-1 gap-2 text-gray-600 font-[Poppins] ">
             <ButtonAnswer :odpowiedz="storeQuizz.odpowiedz1" :nr-przycisku="1"
-                :background-color="buttonStore.button1Background" />
+                />
             <ButtonAnswer :odpowiedz="storeQuizz.odpowiedz2" :nr-przycisku="2"
-                :background-color="buttonStore.button1Background" />
+                 />
             <ButtonAnswer :odpowiedz="storeQuizz.odpowiedz3" :nr-przycisku="3"
-                :background-color="buttonStore.button1Background" />
+                 />
             <ButtonAnswer :odpowiedz="storeQuizz.odpowiedz4" :nr-przycisku="4"
-                :background-color="buttonStore.button1Background" />
+                 />
         </div>
 
     </div>

@@ -16,7 +16,10 @@ export const useQuizzStore = defineStore("storeQuizz", () => {
   const odpowiedz4 = ref("odpowiedz4");
   const nrOdpowiedziDobrej = ref(0);
   const wybranaOdpowiedz = ref(0);
-  const buttonBackground = ref("violet-200");
+  const ifPrawidlowaOdpowiedz = ref(false);
+
+  //blokowanie odpowiedzi
+  const ifZablokowanaOdpowiedz = ref(false);
 
   const nrKolejki = ref(0);
 
@@ -46,6 +49,7 @@ export const useQuizzStore = defineStore("storeQuizz", () => {
     console.log(kolekcjaPytan.value);
     await nextTick();
     console.log("oczekiwana odpowiedz:" + nrOdpowiedziDobrej.value);
+    ifZablokowanaOdpowiedz.value = false;
   }
 
   //metoda sprawdzająca odpowiedź
@@ -58,6 +62,7 @@ export const useQuizzStore = defineStore("storeQuizz", () => {
       ) === true
     ) {
       console.log("prawidłowa odpowiedz");
+      ifPrawidlowaOdpowiedz.value = true;
     }
     if (
       metodyPomocnicze.sprawdzOdpowiedz(
@@ -81,7 +86,8 @@ export const useQuizzStore = defineStore("storeQuizz", () => {
     odpowiedz4,
     nrOdpowiedziDobrej,
     wybranaOdpowiedz,
-    buttonBackground,
+    ifPrawidlowaOdpowiedz,
+    ifZablokowanaOdpowiedz,
     addQuestion,
     checkAnswer,
   };
