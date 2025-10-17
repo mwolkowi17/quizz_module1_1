@@ -17,11 +17,20 @@ export const useQuizzStore = defineStore("storeQuizz", () => {
   const nrOdpowiedziDobrej = ref(0);
   const wybranaOdpowiedz = ref(0);
   const ifPrawidlowaOdpowiedz = ref(false);
+  //licznik punktów
+  const iloscPoprawnychOdpowiedzi = ref(0);
 
   //blokowanie odpowiedzi
   const ifZablokowanaOdpowiedz = ref(false);
 
   const nrKolejki = ref(0);
+
+  //sterowanie widocznością pytań i odpowiedzi
+  const ifPytanie = ref(true);
+  const ifOdpowiedz = ref(true);
+
+  //koniec quizu
+  const ifKoniec = ref(false);
 
   //metoda dodajaca losowo pytania
   async function addQuestion() {
@@ -50,6 +59,12 @@ export const useQuizzStore = defineStore("storeQuizz", () => {
     await nextTick();
     console.log("oczekiwana odpowiedz:" + nrOdpowiedziDobrej.value);
     ifZablokowanaOdpowiedz.value = false;
+    if (nrKolejki.value === 8) {
+      console.log("koniec quizu");
+      ifOdpowiedz.value = false;
+      ifPytanie.value = false;
+      ifKoniec.value = true;
+    }
   }
 
   //metoda sprawdzająca odpowiedź
@@ -62,6 +77,8 @@ export const useQuizzStore = defineStore("storeQuizz", () => {
       ) === true
     ) {
       console.log("prawidłowa odpowiedz");
+      iloscPoprawnychOdpowiedzi.value++;
+      console.log("ilosć punktów:" + iloscPoprawnychOdpowiedzi.value);
       ifPrawidlowaOdpowiedz.value = true;
     }
     if (
@@ -88,6 +105,10 @@ export const useQuizzStore = defineStore("storeQuizz", () => {
     wybranaOdpowiedz,
     ifPrawidlowaOdpowiedz,
     ifZablokowanaOdpowiedz,
+    iloscPoprawnychOdpowiedzi,
+    ifPytanie,
+    ifOdpowiedz,
+    ifKoniec,
     addQuestion,
     checkAnswer,
   };
