@@ -34,12 +34,12 @@ onMounted(async () => {
 
         <div
             class="w-52 h-8 rounded-lg bg-blue-100 border-blue-200 border-2 border-solid flex items-center justify-center text-center self-center">
-            <p class="text-black font-[Poppins] ">Sprawdź swoją wiedzę</p>
+            <p class="text-black font-[Poppins] ">Check your knowlege</p>
         </div>
         <h1 class="text-gray-600 text-4xl font-[Poppins] font-semibold mt-8 mb-4">
-            Jak dobrze znasz nowelę "Latarnik"?
+            How well do you know javascript??
         </h1>
-        <p class="text-gray-600 text-2xl font-[Poppins] font-semibold mt-2 mb-4">liczba poprawnych odpowiedzi: {{ storeQuizz.iloscPoprawnychOdpowiedzi }}</p>
+        <p class="text-gray-600 text-2xl font-[Poppins] font-semibold mt-2 mb-4">good answers: {{ storeQuizz.iloscPoprawnychOdpowiedzi }}</p>
         <hr class="w-200 h-px my-8 bg-gray-200 border-0 dark:bg-gray-200">
         <QuestionSection v-if="storeQuizz.ifPytanie" :question="storeQuizz.pytanie" />
         <div class="grid grid-cols-1 gap-2 text-gray-600 font-[Poppins] " >
@@ -55,7 +55,7 @@ onMounted(async () => {
             <ButtonAnswer :odpowiedz="storeQuizz.odpowiedz4" :nr-przycisku="4"
             v-if="storeQuizz.ifOdpowiedz"
                  />
-            <h2 class="text-gray-600 text-2xl font-[Poppins] font-semibold mt-45 mb-45" v-if="storeQuizz.ifKoniec">Koniec quizzu</h2>
+            <h2 class="text-gray-600 text-2xl font-[Poppins] font-semibold mt-45 mb-45" v-if="storeQuizz.ifKoniec">End of the quizz</h2>
         </div>
 
     </div>
